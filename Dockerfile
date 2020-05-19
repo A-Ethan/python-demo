@@ -7,7 +7,7 @@ ADD . /app
 # RUN指令运行pip命令安装依赖
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 # EXPOSE指令暴露允许被外界访问的8083端口
-EXPOSE 8083
+EXPOSE 80
 # ENV指令设置环境变量NAME
 ENV NAME World
 # CMD指令设置容器内进程为：python app.py，即：这个 Python 应用的启动命令
