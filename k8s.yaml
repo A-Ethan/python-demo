@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-k8s-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-k8s-python
+  template:
+    metadata:
+      labels:
+        app: jenkins-k8s-python
+    spec:
+      containers:
+      - image: uhub.ucloud.cn/hello123/<BUILD_IMAGE>:<BUILD_TAG>
+        imagePullPolicy: IfNotPresent
+        name: jenkins-k8s-python
+        env:
+        - name: branch
+          value: <BRANCH_NAME>
